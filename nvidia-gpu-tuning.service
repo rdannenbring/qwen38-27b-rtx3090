@@ -1,0 +1,48 @@
+[Unit]
+# Persistence mode keeps the driver resident when no client has the GPU open.
+# Without it the driver tears down and re-initialises between runs, which shows
+# up as several seconds of extra latency on the first request after an idle gap
+# and makes `nvidia-smi` itself slow.
+#
+# Install:
+#   sudo cp nvidia-gpu-tuning.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now nvidia-gpu-tuning.service
+#   systemctl status nvidia-gpu-tuning.service
+#
+# Verify after a reboot:
+#   nvidia-smi --query-gpu=persistence_mode,power.limit --format=csv
+#
+Description=NVIDIA persistence mode and power limit (RTX 3090)
+After=systemd-modules-load.service local-fs.target
+ConditionPathExists=/usr/bin/nvidia-smi
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+# Persistence mode on. This is the part that does not survive a reboot today.
+ExecStart=/usr/bin/nvidia-smi -pm 1
+
+# Power limit, pinned so it is reproducible rather than whatever the last
+# manual nvidia-smi call left behind.
+#
+# 350 W is what every benchmark in this repo's working notes was taken at
+# (104 tok/s first run, 102.9 tok/s on the coding set at CTX=long).
+# 250 W is the syv-ai reference config; the published ~114/~124 tok/s figures
+# are at 250 W. Dropping to 250 W lowers transient draw, which matters on a
+# marginal PSU -- a Lian Li SX1000P at 1000 W Platinum is not marginal for one
+# 3090, so this defaults to 350 W.
+#
+# To try 250 W: change the value below, then
+#   sudo systemctl restart nvidia-gpu-tuning.service
+# Measure before and after with:
+#   python3 code_bench.py pl250
+ExecStart=/usr/bin/nvidia-smi -pl 350
+
+# Do not fail the unit if the power-limit call is rejected (some vBIOSes
+# refuse values outside their range); persistence mode is the important half.
+SuccessExitStatus=0 2
+
+[Install]
+WantedBy=multi-user.target
