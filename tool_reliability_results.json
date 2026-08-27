@@ -1,0 +1,3206 @@
+{
+  "model": "qwen3.8-27b",
+  "base": "http://localhost:18020/v1",
+  "results": [
+    {
+      "case_id": "read_simple",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 2.566,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 3.95,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 3.176,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 3.949,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 2.609,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 4.187,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 2.763,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 2.054,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 13.298,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 2.521,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 4.913,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 1.966,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 5.174,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 2.933,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 5.564,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 2.205,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 4.808,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 1.084,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 2.883,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 0,
+      "temperature": 0.0,
+      "latency_s": 2.374,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "greedy"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 2.516,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 2.552,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 2.516,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 2.516,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 2.552,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 2.552,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 4.051,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 2.553,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 2.581,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 2.617,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 2.543,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 2.582,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 2.594,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 2.594,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_simple",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 2.597,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 3.041,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 2.991,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 2.952,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 2.951,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 2.913,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 2.911,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 4.051,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 2.91,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 2.889,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 3.395,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 2.892,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 3.018,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 2.967,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 2.918,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "read_line_range",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 3.571,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 1.65,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 2.152,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 2.696,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 3.737,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 2.035,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 2.156,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 2.781,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 2.287,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 2.164,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 2.15,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 2.657,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 2.656,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 3.623,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 2.667,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_vs_read",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 2.819,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 3.477,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 3.095,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 3.718,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 3.044,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 3.006,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 3.007,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 3.084,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 3.09,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 2.395,
+      "step": 1,
+      "bucket": "wrong_value",
+      "detail": "path='src/', wanted 'src'",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 3.569,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 3.058,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 3.648,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 2.909,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 2.398,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "list_recursive_depth",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 2.985,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 2.834,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 2.594,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 2.095,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 2.722,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 2.689,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 2.613,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 2.227,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 2.636,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 2.634,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 3.056,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 3.644,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 2.837,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 2.102,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 2.789,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_basic",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 2.241,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 4.105,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 3.469,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 4.311,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 2.751,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 3.26,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 3.616,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 4.839,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 2.846,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 3.412,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 3.265,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 3.229,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 3.306,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 3.328,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 3.11,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "search_glob_limit",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 3.887,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 1.257,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 2.762,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 2.763,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 2.763,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 2.765,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 2.803,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 2.766,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 3.201,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 2.911,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 2.762,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 4.127,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 2.567,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 2.765,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 2.803,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_tests",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 3.429,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 2.062,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 2.49,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 2.617,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 2.614,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 2.615,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 2.776,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 2.614,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 2.657,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 2.449,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 2.618,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 2.616,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 2.728,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 2.23,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 2.613,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "run_git",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 2.615,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 10.591,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 4.667,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 12.832,
+      "step": 1,
+      "bucket": "wrong_tool",
+      "detail": "called list_directory, expected write_file",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 4.051,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 1.889,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 8.779,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 3.996,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 17.437,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 1.738,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 5.959,
+      "step": 1,
+      "bucket": "wrong_tool",
+      "detail": "called list_directory, expected write_file",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 5.246,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 9.399,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 9.26,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 3.587,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_simple",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 6.982,
+      "step": 1,
+      "bucket": "wrong_tool",
+      "detail": "called list_directory, expected write_file",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 1.662,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 4.775,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 4.559,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 3.28,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 9.981,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 2.733,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 2.617,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 2.807,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 3.68,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 2.123,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 6.194,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 2.382,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 2.198,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 2.676,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "write_nested_bool",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 3.125,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 4.477,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 2.285,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 4.395,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 3.996,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 2.923,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 3.474,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 5.992,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 3.294,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 6.518,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 3.117,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 6.121,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 3.596,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 6.26,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 4.284,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_enum",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 1.693,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 3.264,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 2.795,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 3.1,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 3.214,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 3.1,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 3.063,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 3.226,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 2.943,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 5.587,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 3.074,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 2.548,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 2.718,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 4.353,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 3.962,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_array_labels",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 2.139,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 3.679,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 6.681,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 3.225,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 4.633,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 2.438,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 3.68,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 3.418,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 3.529,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 5.518,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 3.04,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 3.076,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 3.326,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 6.182,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 4.452,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "issue_nested_object",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 3.11,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 2.175,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 5.704,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 3.999,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 2.948,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 3.671,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 2.882,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 4.092,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 4.216,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 5.181,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 2.133,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 4.882,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 3.943,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 2.299,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 3.522,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_enum_method",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 3.434,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 6.068,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 4.064,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 5.943,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 2.53,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 6.108,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 3.75,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 5.755,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 2.494,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 4.133,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 5.771,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 3.333,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 2.96,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 5.433,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 3.339,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "http_headers_body",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 4.736,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 2.399,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 4.181,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 5.587,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 2.383,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 3.466,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 4.535,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 4.95,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 4.93,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 3.578,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 5.966,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 4.258,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 2.212,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 2.133,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 5.005,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_concept",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 2.945,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 4.684,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 2.581,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 5.041,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 3.598,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 2.228,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 4.344,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 5.435,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 2.923,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 3.277,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 3.97,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 4.157,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 4.085,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 3.258,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 4.979,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "no_tool_opinion",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 5.845,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "declined to call, as required",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 2.291,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 1.586,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 1.666,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 2.013,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 2.654,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 3.081,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 2.897,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 2.107,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 2.658,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 2.858,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 2.768,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 2.693,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 2.656,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 2.617,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "omit_optional",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 2.733,
+      "step": 1,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 7.006,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 5.089,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 5.717,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 5.603,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 6.836,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 5.196,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 4.606,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 5.506,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 5.68,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 5.643,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 5.805,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 5.883,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 6.1,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 5.639,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_search",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 5.551,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 0,
+      "temperature": 0.6,
+      "latency_s": 8.755,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 1,
+      "temperature": 0.6,
+      "latency_s": 4.921,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 2,
+      "temperature": 0.6,
+      "latency_s": 4.461,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 3,
+      "temperature": 0.6,
+      "latency_s": 5.085,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 4,
+      "temperature": 0.6,
+      "latency_s": 5.733,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 5,
+      "temperature": 0.6,
+      "latency_s": 5.771,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 6,
+      "temperature": 0.6,
+      "latency_s": 6.733,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 7,
+      "temperature": 0.6,
+      "latency_s": 5.681,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 8,
+      "temperature": 0.6,
+      "latency_s": 7.949,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 9,
+      "temperature": 0.6,
+      "latency_s": 5.89,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 10,
+      "temperature": 0.6,
+      "latency_s": 5.668,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 11,
+      "temperature": 0.6,
+      "latency_s": 5.468,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 12,
+      "temperature": 0.6,
+      "latency_s": 4.703,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 13,
+      "temperature": 0.6,
+      "latency_s": 4.19,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    },
+    {
+      "case_id": "followup_after_read",
+      "rep": 14,
+      "temperature": 0.6,
+      "latency_s": 4.179,
+      "step": 2,
+      "bucket": "ok",
+      "detail": "",
+      "sweep": "sampled"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "tag": "dflash2_k7",
+  "rows": [
+    {
+      "ctx_requested": 32000,
+      "prompt_tokens": 32724,
+      "completion_tokens": 256,
+      "ttft_s": 41.2,
+      "decode_tok_s": 86.5,
+      "total_s": 44.14
+    },
+    {
+      "ctx_requested": 100000,
+      "prompt_tokens": 94596,
+      "completion_tokens": 256,
+      "ttft_s": 222.9,
+      "decode_tok_s": 60.6,
+      "total_s": 227.11
+    }
+  ]
+}

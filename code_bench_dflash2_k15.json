@@ -1,0 +1,115 @@
+{
+  "tag": "dflash2_k15",
+  "rows": [
+    {
+      "prompt_tokens": 1489,
+      "completion_tokens": 700,
+      "ttft_s": 1.14,
+      "decode_tok_s": 289.5,
+      "tok_per_step": 9.71,
+      "accept_rate": 0.796,
+      "family": "reproduce",
+      "id": "rewrite_py_const",
+      "rep": 0
+    },
+    {
+      "prompt_tokens": 2151,
+      "completion_tokens": 700,
+      "ttft_s": 1.65,
+      "decode_tok_s": 180.1,
+      "tok_per_step": 4.68,
+      "accept_rate": 0.44,
+      "family": "reproduce",
+      "id": "rewrite_sh_var",
+      "rep": 0
+    },
+    {
+      "prompt_tokens": 1482,
+      "completion_tokens": 700,
+      "ttft_s": 1.13,
+      "decode_tok_s": 337.0,
+      "tok_per_step": 9.05,
+      "accept_rate": 0.699,
+      "family": "reproduce",
+      "id": "add_docstring",
+      "rep": 0
+    },
+    {
+      "prompt_tokens": 1485,
+      "completion_tokens": 700,
+      "ttft_s": 1.13,
+      "decode_tok_s": 191.2,
+      "tok_per_step": 4.9,
+      "accept_rate": 0.461,
+      "family": "refactor",
+      "id": "extract_helper",
+      "rep": 0
+    },
+    {
+      "prompt_tokens": 1485,
+      "completion_tokens": 700,
+      "ttft_s": 1.13,
+      "decode_tok_s": 149.5,
+      "tok_per_step": 3.82,
+      "accept_rate": 0.372,
+      "family": "refactor",
+      "id": "add_error_handling",
+      "rep": 0
+    },
+    {
+      "prompt_tokens": 106,
+      "completion_tokens": 700,
+      "ttft_s": 0.17,
+      "decode_tok_s": 130.7,
+      "tok_per_step": 3.24,
+      "accept_rate": 0.313,
+      "family": "generate",
+      "id": "lru_cache",
+      "rep": 0
+    },
+    {
+      "prompt_tokens": 100,
+      "completion_tokens": 700,
+      "ttft_s": 0.11,
+      "decode_tok_s": 137.9,
+      "tok_per_step": 3.4,
+      "accept_rate": 0.332,
+      "family": "generate",
+      "id": "sql_migration",
+      "rep": 0
+    },
+    {
+      "prompt_tokens": 102,
+      "completion_tokens": 700,
+      "ttft_s": 0.11,
+      "decode_tok_s": 135.1,
+      "tok_per_step": 3.28,
+      "accept_rate": 0.316,
+      "family": "generate",
+      "id": "rust_ratelimit",
+      "rep": 0
+    },
+    {
+      "prompt_tokens": 2148,
+      "completion_tokens": 700,
+      "ttft_s": 0.96,
+      "decode_tok_s": 136.9,
+      "tok_per_step": 3.49,
+      "accept_rate": 0.341,
+      "family": "explain",
+      "id": "explain_script",
+      "rep": 0
+    },
+    {
+      "prompt_tokens": 1473,
+      "completion_tokens": 700,
+      "ttft_s": 1.14,
+      "decode_tok_s": 127.4,
+      "tok_per_step": 3.19,
+      "accept_rate": 0.307,
+      "family": "explain",
+      "id": "review_py",
+      "rep": 0
+    }
+  ]
+}

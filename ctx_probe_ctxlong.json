@@ -1,0 +1,37 @@
+{
+  "tag": "ctxlong",
+  "rows": [
+    {
+      "ctx_requested": 4000,
+      "prompt_tokens": 3866,
+      "completion_tokens": 256,
+      "ttft_s": 32.27,
+      "decode_tok_s": 85.5,
+      "total_s": 35.26
+    },
+    {
+      "ctx_requested": 32000,
+      "prompt_tokens": 32724,
+      "completion_tokens": 256,
+      "ttft_s": 28.68,
+      "decode_tok_s": 81.3,
+      "total_s": 31.82
+    },
+    {
+      "ctx_requested": 100000,
+      "prompt_tokens": 94596,
+      "completion_tokens": 256,
+      "ttft_s": 109.6,
+      "decode_tok_s": 72.0,
+      "total_s": 113.15
+    },
+    {
+      "ctx_requested": 145000,
+      "prompt_tokens": 137359,
+      "completion_tokens": 256,
+      "ttft_s": 185.29,
+      "decode_tok_s": 73.6,
+      "total_s": 188.75
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "tag": "ctxhuge",
+  "rows": [
+    {
+      "ctx_requested": 4000,
+      "prompt_tokens": 3866,
+      "completion_tokens": 256,
+      "ttft_s": 6.09,
+      "decode_tok_s": 82.3,
+      "total_s": 9.19
+    },
+    {
+      "ctx_requested": 32000,
+      "prompt_tokens": 32724,
+      "completion_tokens": 256,
+      "ttft_s": 28.7,
+      "decode_tok_s": 63.6,
+      "total_s": 32.71
+    },
+    {
+      "ctx_requested": 100000,
+      "prompt_tokens": 94596,
+      "completion_tokens": 256,
+      "ttft_s": 103.68,
+      "decode_tok_s": 37.6,
+      "total_s": 110.46
+    }
+  ]
+}
