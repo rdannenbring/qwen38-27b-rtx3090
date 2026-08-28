@@ -9,3 +9,5 @@ venv/
 drafter/data/
 drafter/runs/
 .env
+.agenttrail/
+node_modules/
