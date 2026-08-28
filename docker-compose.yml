@@ -48,7 +48,13 @@ x-serve: &serve
           - driver: nvidia
             count: 1
             capabilities: [gpu]
-  restart: unless-stopped
+  # No restart policy on purpose. This server needs 21.91 GiB of a 24 GiB card,
+  # so anything else holding the GPU makes it fail at startup -- and with
+  # `restart: unless-stopped` that became a silent loop: 155 restarts and 414
+  # hits on the "Free memory on device cuda:0" guard on 2026-08-28, while
+  # Unsloth Studio held ~20.6 GiB. Failing once and staying down is louder and
+  # cheaper. ~/Development/gpu-tray is the arbiter that decides which server
+  # owns the card; it starts this one and waits for the VRAM first.
   stop_grace_period: 30s
   healthcheck:
     test: ["CMD", "curl", "-sf", "http://127.0.0.1:${PORT:-18020}/health"]
