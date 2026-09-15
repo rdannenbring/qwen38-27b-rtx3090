@@ -11,3 +11,4 @@ drafter/runs/
 .env
 .agenttrail/
 node_modules/
+.env.*
