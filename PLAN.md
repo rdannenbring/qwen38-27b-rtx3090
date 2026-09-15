@@ -136,10 +136,17 @@ expensive reasoning on Claude.
 
 - [x] Point the agent at the local server with the right context limit {#harness-provider}
       by: claude
-      tech: ~/.omp/agent/models.yml:8-24, contextWindow 150000 matching what is served
+      tech: ~/.omp/agent/models.yml rewritten for omp 18.1.21 on 2026-09-15:
+            api: openai-completions, baseUrl localhost:18020/v1, models as a list,
+            cost needs cacheRead/cacheWrite, contextWindow 150000 matching what is
+            served, compat.stripImageInput true because the server is
+            --language-model-only. `omp models qwen38-local` lists it, images: no
 - [x] Give the local model the frequent cheap jobs and keep planning on Claude {#harness-roles}
       by: claude
-      tech: ~/.omp/agent/config.yml:5-10; advisor deliberately not routed
+      tech: re-done on 2026-09-15 against the new schema, and WIDER than the title
+            says: modelRoles.default is the local model, advisor stays on Claude.
+            Proven by vllm:request_success_total going 7 -> 8 across one default-role
+            turn, not by reading the config back. See decisions
 - [x] Find out what each connected tool server costs in context {#harness-mcpcost}
       by: claude
       tech: mcp_cost.py, 125 tools across 8 servers, tokenised with the served model
@@ -177,6 +184,14 @@ files: [nvidia-gpu-tuning.service, .env, api_key.txt]
       by: claude
       tech: unsloth-studio.service disabled, its autostart .desktop and generated
             unit gone; ~/Development/gpu-tray is now the only thing that starts either
+- [x] Bring the server back up on the new desktop install {#deploy-reinstall}
+      by: claude
+      tech: nvidia-container-toolkit 1.20.0 installed and the nvidia runtime
+            registered; image rebuilt (15/15 patches, KVarN, verify OK at build);
+            prepare a no-op against the existing weights; healthy in 155 s with
+            fp8 KV, max_model_len 150,000, KV pool 176,020 tokens, MTP-3,
+            prefix caching on; verify.sh 0 failures against the live server;
+            401/401/200 on auth; /v1/messages and tool_calls both answer
 - [ ] Confirm the GPU settings survive an actual reboot {#deploy-reboot}
       from: agent
       tech: also the first real test of the arbiter — nothing but the tray should come up
@@ -274,3 +289,55 @@ no restart policy, so a GPU-starved start fails once and stays down
 MCP tool schemas cost omp 1,313 tokens, not 30,423. The larger number is what the
 same eight servers cost a harness that inlines schemas; omp mounts them as `xd://`
 routes. Evidence is a captured request body, not inference — `#harness-mcptruth`.
+
+**The machine moved to a different OS install, not different hardware.** On
+2026-09-14 the card, the weights and this repo are the same; the root filesystem
+is not. `/home` was `/dev/mapper/ArchinstallVg-root[/@home]` under the old arch
+install and is `/dev/mapper/root` under omarchy, while `~/local-ai` is the same
+btrfs subvolume on `/dev/nvme2n1p1` under both. That split is the whole reason
+the restore is cheap: `MODELS_DIR` was pointed at the shared disk on 2026-09-02,
+so the 24 GB of weights, the three variants and the hardlinks between the base
+and `-fast` directories all carried over untouched. What did not carry over
+lives on the root filesystem: the `qwen38-27b-3090:latest` image, the
+nvidia-container-toolkit that gives Docker an `nvidia` runtime, the
+`nvidia-gpu-tuning.service` unit, and the omp wiring in `~/.omp/agent/`.
+
+**Seven model files are mode 600 root:root and that is not being fixed yet.**
+The root-run rsync in `move-models-to-local-ai.sh` left them that way, one of
+them `Qwen3.8-27B-W4A16-AutoRound-fast/model-00006-of-00007.safetensors`, in the
+variant actually served. It does not block Docker: there is no userns-remap on
+this daemon, the container runs as uid 0, and a container mounting that tree was
+observed reading the shard. It would block the venv path, a benchmark script, or
+a checksum run as the owner, so the `chown -R` is deferred rather than dismissed.
+
+**`#deploy-reboot` is not answered by this session.** The old install's
+`enable --now` state is gone with the old root filesystem, so the unit is being
+installed fresh here. Whether it survives a reboot is still untested, and the
+reboot that would test it has not happened on this install either.
+
+**omp's config schema changed under us, so the wiring was rebuilt, not restored.**
+The old install's `~/.omp/agent/models.yml` is gone with the old root filesystem
+and omp is now 18.1.21 with `setupVersion: 2`. The file is still the mechanism and
+still lives at `~/.omp/agent/models.yml`, but four things differ from the shape
+recorded in `qwen38-vllm-handoff.md`: a provider needs `api: openai-completions`,
+`models` is a list of objects with `id` rather than a map, `cost` must carry
+`cacheRead` and `cacheWrite`, and `compat.stripImageInput` is the documented
+opt-out for a server started `--language-model-only`. Without that last one omp
+advertises the model as image-capable and the server answers from placeholder
+embeddings rather than erroring. The schema was recovered by writing a candidate
+and reading the validator's own rejections, not from documentation.
+
+**The role split is wider than it was, and that was the owner's call, not a
+restoration.** The old machine sent `smol`, `task`, `commit` and `tiny` to the
+local model and kept `plan` and `slow` on Claude. The new schema's `modelRoles`
+held only `advisor` and `default`, so the choice offered was `default` local with
+`advisor` on Claude, and that is what was set. The practical difference is that
+every ordinary omp turn now runs on the 27B rather than only the cheap ones.
+Reverting to the old intent is one command:
+`omp config set modelRoles '{"advisor":"anthropic/claude-opus-5","default":"anthropic/claude-opus-5"}'`,
+then add the cheap roles back by name. `~/.omp/agent/config.yml.bak-*` holds the
+pre-change file.
+
+**`omp config set` cannot address a nested key.** `modelRoles.default` is
+rejected with "Unknown setting"; the whole record has to be set as one JSON value.
+Worth knowing before hand-editing `config.yml`, which is the obvious wrong move.
