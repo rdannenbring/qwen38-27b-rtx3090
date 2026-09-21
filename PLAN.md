@@ -31,6 +31,14 @@ combinations that do not work. The busiest surface in the repo: 61 commits on
       tech: profiles [single]/[batch] at docker-compose.yml:65-73, batch/start_qwen.sh
 - [x] Survive a dead engine without needing a manual cleanup {#serve-shm}
       tech: stale /dev/shm/vllm_offload_*.mmap unlinked, single-user/start_qwen.sh:47-58
+- [x] Accept screenshots and images, not just text {#serve-vision}
+      by: claude
+      tech: VISION=1 in .env — vision tower loaded with VLLM_VISION_CPU_OFFLOAD_GB=1,
+            one image per request, 2,097,152 px cap (2,048 image tokens). Healthy in
+            180 s; pool 198,979 tokens at MAX_LEN 150,000, which is warm-cache headroom
+            (gotcha 16), NOT a vision gain. Proven by transcription, not by the flag: a
+            rendered PNG came back exactly "VELTRIX / 42 ORANGES" at 1,020 prompt
+            tokens, and again through omp
 - [ ] Make the 15-token drafter start without hand-editing a second variable {#serve-dflash15}
       from: agent
       tech: that branch reads DFLASH_MAX_LEN and ignores MAX_LEN — single-user/start_qwen.sh:240
@@ -139,8 +147,9 @@ expensive reasoning on Claude.
       tech: ~/.omp/agent/models.yml rewritten for omp 18.1.21 on 2026-09-15:
             api: openai-completions, baseUrl localhost:18020/v1, models as a list,
             cost needs cacheRead/cacheWrite, contextWindow 150000 matching what is
-            served, compat.stripImageInput true because the server is
-            --language-model-only. `omp models qwen38-local` lists it, images: no
+            served. `omp models qwen38-local` lists it. stripImageInput was set
+            while the server was --language-model-only and removed on 2026-09-20 when
+            VISION=1 went in; the two must move together (#serve-vision)
 - [x] Give the local model the frequent cheap jobs and keep planning on Claude {#harness-roles}
       by: claude
       tech: re-done on 2026-09-15 against the new schema, and WIDER than the title
@@ -192,6 +201,18 @@ files: [nvidia-gpu-tuning.service, .env, api_key.txt]
             fp8 KV, max_model_len 150,000, KV pool 176,020 tokens, MTP-3,
             prefix caching on; verify.sh 0 failures against the live server;
             401/401/200 on auth; /v1/messages and tool_calls both answer
+- [x] Get the container seeing the GPU again after a kernel change {#deploy-cdi}
+      by: claude
+      tech: verify.sh failed `torch cannot see a CUDA GPU` while the host was fine —
+            modules loaded, DKMS built for 7.2.5-3-omarchy, nvidia-smi 200. The CDI spec
+            at /etc/cdi/nvidia.yaml, generated 2026-09-14, still named /dev/nvidia-uvm
+            major 237; the reboot moved it to 238. Fixed with
+            `nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml`
+- [ ] Regenerate the CDI spec at boot, so a kernel change cannot break this again {#deploy-cdi-boot}
+      from: agent
+      tech: the pacman hook regenerates only when an NVIDIA package changes, not when the
+            uvm major shifts at boot. A unit after the modules load and before docker
+            starts would cover it — next to nvidia-gpu-tuning.service
 - [ ] Confirm the GPU settings survive an actual reboot {#deploy-reboot}
       from: agent
       tech: also the first real test of the arbiter — nothing but the tray should come up
@@ -341,3 +362,24 @@ pre-change file.
 **`omp config set` cannot address a nested key.** `modelRoles.default` is
 rejected with "Unknown setting"; the whole record has to be set as one JSON value.
 Worth knowing before hand-editing `config.yml`, which is the obvious wrong move.
+
+**A stale CDI spec, not a broken driver, is what "torch cannot see a CUDA GPU"
+meant.** Everything on the host was healthy — nvidia modules loaded, DKMS built
+for the running kernel, `nvidia-smi` answering, `/dev/nvidia*` present — and
+`docker run --gpus all nvidia-smi -L` even listed the card. The split that found
+it: `--runtime=nvidia` gave `cuda: True` while `--gpus all` gave `cuda: False`
+with "CUDA unknown error" and `device_count: 1`. Compose's
+`deploy.resources.reservations.devices` is the second path. `/dev/nvidia-uvm` has
+a dynamically allocated major that moved from 237 to 238 across the reboot into
+7.2.5-3-omarchy, and the CDI spec still carried 237, so the container got a uvm
+node pointing at nothing. `nvidia-smi` kept working throughout because it needs
+only /dev/nvidia0 and /dev/nvidiactl, which are statically major 195 — which is
+exactly why the host looked fine and the diagnosis had to come from inside a
+container.
+
+**Vision is on, and the KV pool got bigger rather than smaller.** The tower's
+profiled encoder peak does come out of the pool, so the number to watch was
+whether 150,000 still fit. It reported 198,979 tokens against 176,020 before —
+but that is the cold-vs-warm compile cache from gotcha 16 reappearing, not
+evidence that vision is free. The honest statement is that vision fits with
+room to spare at CTX=long on this card, not that it costs nothing.
