@@ -168,10 +168,10 @@ expensive reasoning on Claude.
       from: agent
 
 ## Keep the server private and running after a reboot {#deploy}
-tech: nvidia-gpu-tuning.service, .env, api_key.txt, .gitignore
+tech: nvidia-gpu-tuning.service, nvidia-cdi-refresh.service, .env, api_key.txt, .gitignore
 needs: [serve]
 links: [harness, docs]
-files: [nvidia-gpu-tuning.service, .env, api_key.txt]
+files: [nvidia-gpu-tuning.service, nvidia-cdi-refresh.service, .env, api_key.txt]
 
 - [x] Stop anyone on the network from using the server {#deploy-key}
       by: claude
@@ -208,11 +208,16 @@ files: [nvidia-gpu-tuning.service, .env, api_key.txt]
             at /etc/cdi/nvidia.yaml, generated 2026-09-14, still named /dev/nvidia-uvm
             major 237; the reboot moved it to 238. Fixed with
             `nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml`
-- [ ] Regenerate the CDI spec at boot, so a kernel change cannot break this again {#deploy-cdi-boot}
-      from: agent
-      tech: the pacman hook regenerates only when an NVIDIA package changes, not when the
-            uvm major shifts at boot. A unit after the modules load and before docker
-            starts would cover it — next to nvidia-gpu-tuning.service
+- [x] Regenerate the CDI spec at boot, so a kernel change cannot break this again {#deploy-cdi-boot}
+      by: claude
+      tech: nvidia-cdi-refresh.service, Before=docker.service. Two nvidia-modprobe
+            ExecStartPre lines load the uvm module first, because /dev/nvidia-uvm is
+            created on demand and a spec generated before it exists carries no uvm entry
+            at all — as broken as a stale major, and harder to spot. Installed:
+            is-enabled enabled, is-active active, `Finished Regenerate the NVIDIA CDI
+            spec` in the journal, spec mtime 2026-09-20 22:46:05, uvm major 238 matching
+            the live node. No hard dependency on docker, so a failure here leaves a
+            visible failed unit rather than blocking the boot
 - [ ] Confirm the GPU settings survive an actual reboot {#deploy-reboot}
       from: agent
       tech: also the first real test of the arbiter — nothing but the tray should come up

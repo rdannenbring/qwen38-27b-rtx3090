@@ -1,0 +1,53 @@
+[Unit]
+# Regenerate the CDI spec that tells Docker which device nodes to place inside a
+# container.
+#
+# Why this exists: /dev/nvidia-uvm has a DYNAMICALLY allocated major number, and
+# it can change across a reboot. /etc/cdi/nvidia.yaml records that number, and
+# the packaged pacman hook only regenerates it when an NVIDIA package changes --
+# never when the number moves on its own. When they disagree, every container
+# taking the DeviceRequests path (which is what compose's
+# deploy.resources.reservations.devices is, and what `docker run --gpus` is)
+# receives a /dev/nvidia-uvm pointing at nothing.
+#
+# The symptom is deeply misleading. The host looks perfect: modules loaded, DKMS
+# built, `nvidia-smi` answering, and even `docker run --gpus all nvidia-smi -L`
+# listing the card -- because nvidia-smi needs only /dev/nvidia0 and
+# /dev/nvidiactl, which are statically major 195. Only CUDA touches uvm, so the
+# failure surfaces as `torch cannot see a CUDA GPU` / "CUDA unknown error" with
+# device_count 1. Seen on 2026-09-20: spec said 237, kernel 7.2.5-3-omarchy gave
+# 238.
+#
+# Install:
+#   sudo cp nvidia-cdi-refresh.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now nvidia-cdi-refresh.service
+#
+# Verify it agrees with the running kernel:
+#   grep -A2 'path: /dev/nvidia-uvm$' /etc/cdi/nvidia.yaml
+#   ls -l /dev/nvidia-uvm
+#
+Description=Regenerate the NVIDIA CDI spec for containers
+Documentation=https://github.com/NVIDIA/nvidia-container-toolkit
+After=systemd-modules-load.service local-fs.target
+Before=docker.service
+ConditionPathExists=/usr/bin/nvidia-ctk
+ConditionPathExists=/usr/bin/nvidia-modprobe
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+# /dev/nvidia-uvm is created on demand by the first CUDA client, not at boot.
+# Generating the spec before it exists yields one with NO uvm entry at all,
+# which breaks CUDA in containers just as thoroughly as a stale major -- so load
+# it deliberately first rather than hoping something else already did.
+# -c 0 covers the nvidia module and /dev/nvidia0 + /dev/nvidiactl; -u covers the
+# unified-memory module and /dev/nvidia-uvm + /dev/nvidia-uvm-tools.
+ExecStartPre=/usr/bin/nvidia-modprobe -c 0
+ExecStartPre=/usr/bin/nvidia-modprobe -c 0 -u
+
+ExecStart=/usr/bin/nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml
+
+[Install]
+WantedBy=multi-user.target
